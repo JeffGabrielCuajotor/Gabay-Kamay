@@ -2,6 +2,8 @@ import cv2
 import time
 import mediapipe as mp
 
+from feature_extraction import extract_features, TOTAL_FEATURES
+
 
 # ---------------------------------------------------------
 # Gabay-Kamay
@@ -364,6 +366,13 @@ def main():
                 mp_image,
                 timestamp_ms
             )
+
+            features = extract_features(result)
+
+            print(
+                f"Feature count: {len(features)}",
+                end="\r"
+)
 
 
             # -------------------------------------------------
